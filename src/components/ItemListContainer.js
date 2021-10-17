@@ -1,9 +1,7 @@
-
-
-export const ItemListContainer = (props) => {
-    return (
-        <div>
-            <h1>Productos disponibles {props.value}</h1>
-        </div>
-    )
-}
+export const ItemListContainer = () => {
+  return (
+    <div>
+      <h1>Productos disponibles</h1>
+    </div>
+  );
+};
