@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react"
+import { NavLink } from "react-router-dom"
 import Item from "./Item"
 import Loading from "./Loading"
 
@@ -50,7 +51,9 @@ export const ItemList = () => {
 
 
                             <div className="col-md-4 mt-4">
-                                <Item key={items.id} items={items} />
+                                <NavLink className="nav-link" to={`/product/${items.id}`}>
+                                    <Item key={items.id} items={items} />
+                                </NavLink>
                             </div>
 
 
