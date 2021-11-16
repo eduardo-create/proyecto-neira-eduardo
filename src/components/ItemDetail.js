@@ -1,4 +1,3 @@
-// import { CartWidget } from "./CartWidget";
 import ItemCount from "./ItemCount";
 import { Link } from "react-router-dom";
 import { useCartContext } from "../context/CartContext";
@@ -10,7 +9,7 @@ function ItemDetail({ product }) {
 
   const addToCart = (quantityAdded) => {
     setQuantity(quantityAdded);
-    addToCartList({ product, quantity });
+    addToCartList({ quantity: quantityAdded });
   };
 
   return (
@@ -18,7 +17,7 @@ function ItemDetail({ product }) {
       <div className="card mb-3">
         <div className="row g-0">
           <div className="col-md-5">
-            <img className="img-fluid" src={product.image} alt="" />
+            <img className="img-fluid" src={product.image} alt={product.name} />
           </div>
           <div className="col-md-7">
             <div className="card-body">
@@ -33,7 +32,7 @@ function ItemDetail({ product }) {
               <ItemCount
                 initial={quantity}
                 stock={product.quantity}
-                id={product.id}
+                id={product.name}
                 addToCart={addToCart}
               />
               <button className="btn btn-success mt-3">

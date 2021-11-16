@@ -3,7 +3,7 @@ import { useCartContext } from '../context/CartContext';
 
 export const CartWidget = () => {
 
-  const { cart } = useCartContext();
+  const { itemQuantity } = useCartContext();
 
 
   return (
@@ -11,7 +11,7 @@ export const CartWidget = () => {
       <button className="btn btn-outline-success position-relative">
         <i className="bi bi-cart-plus"></i>
         <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success">
-          {cart.length}
+          {itemQuantity}
         </span>
       </button>
     </NavLink>
